@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<Style>
+    body{
+        background-color: rgb(28, 33, 44);
+        color: rgb(250, 246, 37);
+        text-align: center;
+    }
+    h1{
+        color: rgb(245, 105, 24);
+    }
+</Style>
+<body>
+    <div>
+        <h1>Funciones de JQuery</h1>
+        <hr>
+    </div>
+
+    <div>
+        <h1 id="click">.click</h1>
+        <p id="pclick">Al realizar click en el Titulo este texto desaparecera y aparecera nuevamente si hace click denuevo.</p>
+        <hr>
+    </div>
+
+    <div>
+        <h1>.hide</h1>
+        <p>Al realiza click en el siguiente parrafo el texto desaparecera</p>
+        <p id="bHide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam accusantium, repellat a explicabo voluptatum deserunt ullam numquam autem incidunt vero reiciendis! Fuga numquam id repudiandae exercitationem officiis, at in magni.</p>
+        <hr>
+    </div>
+
+    <div>
+        <h1 id="show">.show</h1>
+        <p>Al realizar click en el titulo aparecera un texto oculto</p>
+        <p id="pshow" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, exercitationem saepe quia odit laudantium ducimus facilis alias quisquam consequuntur! Mollitia soluta quod totam maxime eius minus placeat, quos doloremque impedit!</p>
+        <hr>
+    </div>
+
+    <div>
+        <h1 id="toggle">.toggle</h1>
+        <p>Al hacer click aparecera / desaparecera el texto de abajo.</p>
+        <p id="ptoggle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam adipisci, atque numquam in blanditiis debitis consequatur sint vero delectus nesciunt omnis unde modi quis harum quam quo provident facere deleniti.</p>
+        <hr>
+    </div>
+
+    <div>
+        <h1>.slideDown</h1>
+        <p>Al hacer click en el bu</p>
+        <hr>
+    </div>
+
+    <script>
+
+        $('#click').click(function(){
+            $('#pclick').toggle("slow");
+        });
+
+        $('#bHide').click(function(){
+            $(this).hide("slow");
+        });
+
+        $('#show').click(function(){
+            $('#pshow').show("slow");
+        });
+
+        $('#toggle').click(function(){
+            $('#ptoggle').toggle("slow");
+        });
+
+    </script>
+</body>
+</html>
