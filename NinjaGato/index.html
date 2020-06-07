@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninjas - jQuery</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: darkslategrey;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        .ninja{
+            width: 20%;
+            border: 2px solid purple;
+            border-radius: 5px;
+        }
+        .container{
+            display:table-caption;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery - Actividad Ninja Desaparecido</h1>
+        <img src="img/cat0.png" data-change='img/ninja0.png'>
+        <img src="img/cat1.png" data-change='img/ninja1.png'>
+        <img src="img/cat2.png" data-change='img/ninja2.png'>
+        <img src="img/cat3.png" data-change='img/ninja3.png'>
+        <img src="img/cat4.png" data-change='img/ninja4.png'>
+    </div>
+    <script>
+        $('img').click (function(){
+            const source = $(this).attr('src');
+            const altern = $(this).attr('data-change');
+            $(this).attr('src',altern);
+            $(this).attr('data-change',source);
+        });  
+    </script>
+</body>
+</html>
