@@ -15,6 +15,12 @@
     h1{
         color: rgb(245, 105, 24);
     }
+    .addClase{
+        border: red solid 1px;
+        border-radius: 10px;
+        width: 25%;
+        height: 25%;
+    }
 </Style>
 <body>
     <div>
@@ -51,9 +57,125 @@
 
     <div>
         <h1>.slideDown</h1>
-        <p>Al hacer click en el bu</p>
+        <button id="slideD" >SlideDown</button>
+        <p>Al hacer click en el boton aparecera un texto deslizandose hacia abajo</p>
+        <p id="pslideD" style="display: none;" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla illum et, minus hic rerum quas, corrupti natus, numquam cum aperiam architecto! Praesentium rem veritatis, enim molestias perferendis ex pariatur quos.</p>
         <hr>
     </div>
+
+    <div>
+        <h1>.slideUp</h1>
+        <button id="slideU">SlideUp</button>
+        <p>Al hacer click en el boton desaparecera un texto deslizandose hacia arriba</p>
+        <p id="pslidep">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla autem magnam porro, deleniti, aliquid quos sint commodi quam sequi non laborum animi ipsam mollitia fuga sunt debitis. Veniam, doloremque quaerat?</p>
+        <hr>
+    </div>
+
+    <div>
+        <h1>.slideToggle</h1>
+        <button id="slideT">SlideToggle</button>
+        <p>Al hacer click en el boton aparecera o desaparecera deslizandose una imagen deabajo.</p>
+        <img style="height: 25%; width: 25%;" style="display: none;" id="islideT" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko">
+        <hr>
+    </div>
+
+    <div>
+        <h1>.fadeIn</h1>
+        <button id="fadeIn">FadeIn</button>
+        <p>Al realizar click en el boton aparecera una imagen con efecto de desvanecimiento</p>
+        <img style="height: 25%; width: 25%;" id="ifadeIn" style="display: none;" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko">
+        <hr>
+    </div>
+
+    <div>
+        <h1>.fadeOut</h1>
+        <p>Al realizar click sobre la imagen, esta desaparecera con un efecto de desvanecimiento</p>
+        <img style="height: 25%; width: 25%;" id="ifadeOut" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko">
+        <hr>
+    </div>
+
+    <div>
+        <h1>.fadeToggle</h1>
+        <button id="fadeT">FadeToggle</button>
+        <p>Al realizar click en el boton aparecera / desaparecera una imagen con efecto de desvanecimiento</p>
+        <img style="height: 25%; width: 25%;" id="ifadeT" style="display: none;" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko">
+        <hr>
+    </div>
+
+    <div>
+        <h1>.addClass</h1>
+        <button id="addC" >AddClass</button>
+        <p>Al realizar click en el boton se le agragara una nueva clase a la imagen que contienes instrucciones de CSS</p>
+        <img style="height: 25%; width: 25%;" id="iaddC" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko">
+        <hr>
+    </div>
+
+    <div>
+        <h1>.before</h1>
+        <button id="before" >Before</button>
+        <p>Al realizar click en el boton la segunda imagen pasara a ser la primera</p>
+        <img style="height: 25%; width: 25%;" id="ibefore1" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko">
+        <img style="height: 25%; width: 25%;" id="ibefore2" src="img/Koenigsegg-Jesko2.jpg" alt="Koenigsegg-Jesko2">
+        <hr>
+    </div>
+
+    <div>
+        <h1>.after</h1>
+        <button id="after" >After</button>
+        <p>Al realizar click en el boton la primera imagen pasara a ser la segunda</p>
+        <img style="height: 25%; width: 25%;" id="iafter1" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko">
+        <img style="height: 25%; width: 25%;" id="iafter2" src="img/Koenigsegg-Jesko2.jpg" alt="Koenigsegg-Jesko2">
+        <hr>
+    </div>
+
+    <div>
+        <div id="append">
+            <h1>.append</h1>
+            <button id="bappend" >Append</button>
+            <p>Al realizar click en el boton se agregara una linea de codigo HTML, agregando titulo debajo de la imagen</p>
+            <img style="height: 25%; width: 25%;" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko">
+        </div>
+        <hr>
+    </div>
+
+    <div>
+        <h1>.html</h1>
+        <button id="bHtml">Html</button>
+        <p>Al realizar click en el boton se cambiara una linea html a la etiqueta h2</p>
+        <h2 id="tHtml">Ejemplo de .html:</h2>
+        <hr>
+    </div>
+
+    <div>
+        <h1>.attr</h1>
+        <button id="bAttr">Attr</button>
+        <p>Al realizar click en el boton se agregara nuevos atributos a la imagen</p>
+        <img style="height: 25%; width: 25%;" id="iAttr" src="img/Koenigsegg-Jesko.jpg" alt="Koenigsegg-Jesko" title="Koenigsegg-Jesko">
+        <div id="altimg" style="color: burlywood;"></div>
+        <hr>
+    </div>
+
+    <div>
+        <h1>.val</h1>
+        <p>Segun la seleccion que realice se mostrara el texto del color seleccionado</p>
+        <select name="Colores" id="cVal">
+            <option ></option>
+            <option >green</option>
+            <option >red</option>
+        </select>
+        <h2 id="tVal">PRUEBA</h2>
+        <hr>
+    </div>
+
+    <div>
+        <h1>.text</h1>
+        <button id="bText">Text</button>
+        <p>Al realizar click en el boton se agregara texto al parrafo de abajo</p>
+        <p id="tText"></p>
+        <hr>
+    </div>
+
+    
 
     <script>
 
@@ -71,6 +193,72 @@
 
         $('#toggle').click(function(){
             $('#ptoggle').toggle("slow");
+        });
+
+        $('#slideD').click(function(){
+            $('#pslideD').slideDown("slow");
+        });
+
+        $('#slideU').click(function(){
+            $('#pslidep').slideUp("slow");
+        });
+
+        $('#slideT').click(function(){
+            $('#islideT').slideToggle("slow");
+        });
+
+        $('#fadeIn').click(function(){
+            $('#ifadeIn').fadeIn("slow");
+        });
+
+        $('#ifadeOut').click(function(){
+            $(this).fadeOut("slow");
+        });
+
+        $('#fadeT').click(function(){
+            $('#ifadeT').fadeToggle("slow");
+        });
+
+        $('#addC').click(function(){
+            $('#iaddC').addClass("addClase");
+        });
+        
+        $('#before').click(function(){
+            $('#ibefore1').before($('#ibefore2'));
+        });
+
+        $('#after').click(function(){
+            $('#iafter2').after($('#iafter1'));
+        });
+        
+        $('#bappend').click(function(){
+            $('#append').append("<h3>Koenigsegg Jesko</h3>");
+        });
+        
+        $('#bHtml').click(function(){
+            $('#tHtml').html("<span style='color:chartreuse;'><b>Linea de html cambiada</b></span>")
+        });
+
+        $('#altimg').text($('#iAttr').attr("alt"));
+        $('#bAttr').click(function(){
+            $('#iAttr').attr({
+                src:"img/Koenigsegg-Jesko2.jpg",
+                alt:"Koenigsegg-Jesko-2",
+                title:"Koenigsegg-Jesko-2"
+            });
+            $('#altimg').text($('#iAttr').attr("alt"));
+        });
+
+        function selecionar(){
+            var col = 'color:'+$('#cVal').val();
+            $('#tVal').attr({          
+                style:col
+            });
+        }
+        $('#cVal').change(selecionar);
+
+        $('#bText').click(function(){
+            $('#tText').text("Puede agregar cualquie tipo de texto... <button id='bText'>Text</button> ")
         });
 
     </script>
