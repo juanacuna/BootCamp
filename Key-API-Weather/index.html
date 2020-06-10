@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <style>
+        body{
+            background-color: rgb(34, 56, 88);
+            color: cyan;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('form').submit(function(){
+                var cd = $('#ciudad').val();
+                $.get("https://api.openweathermap.org/data/2.5/weather?q="+cd+"&appid=bde6cc83bb4c6eafe5037c47d7afaaf6", function(clima){
+                    console.log(clima);
+                    var temp = (clima.main.temp-273.15)*9/5+32;
+                    temp = Math.round(temp);
+                    var tiempo =(clima.weather[0].main);
+                    $('.datos').html('<h1>Temperatura: '+temp+'°F</h1>'+
+                    '<h1>'+cd+': '+tiempo+'</h1><h1>Coordenadas: Longitud: '
+                    +clima.coord.lon+', Latitud: '+clima.coord.lat+'</h1>')
+                    },"json");
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <form method="post">
+        <h1>Estado del Tiempo en el Mundo:</h1>
+        <h4>Ciudad</h4>
+        <input id="ciudad" placeholder="buscar ciudad" type="text">
+        <button type="submit">enviar</button>
+        <div class="datos">
+
+        </div>
+    </form>
+</body>
+</html>
