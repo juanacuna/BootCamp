@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/alr6tqg.css">
+    <style>
+        body{
+            margin: 0;
+            text-align: center;
+            font-family: balzano-std, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            background-color: rgb(24, 33, 41);
+            color: rgb(226, 230, 233);
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="name"></div>
+    <div id="info"></div>
+    
+
+    <script>
+        var x =localStorage.getItem("mynum");
+        $.get("https://www.anapioficeandfire.com/api/houses/"+x+"", function(dataGot){
+            $('#name').append('<h1 style="color: gold";>'+dataGot.name+'</h1>');
+            $('#info').append('<h3>Region: '+dataGot.region+' </h3>');
+            $('#info').append('<h3>Founded: '+dataGot.founded+' </h3>');
+            $('#info').append('<h3>Titles:</h3>');
+            var top = dataGot.titles.length;
+            for(var i = 0; i < top; i++){
+                $('#info').append('<h5>'+(i+1)+'- '+dataGot.titles[i]+'</h5>');
+            }
+            
+
+        },"json");    
+    </script>
+</body>
+</html>

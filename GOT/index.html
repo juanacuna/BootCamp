@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/alr6tqg.css">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(24, 33, 41);
+            color: rgb(226, 230, 233);
+            font-family: balzano-std, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+        }
+        button{
+            height: 40px;
+            width: 130px;
+            border-radius: 10px;
+            background-color: gold;
+            font-family: balzano-std, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+        }
+        .link{
+            text-decoration: none;
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+        }
+        .container{
+            display: inline-block;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .got{
+            height: 150px;
+        }
+        .escudos{
+            display: inline-flex;
+        }
+        .escudos img{
+            border-radius: 20px;
+             height: 620px;
+             max-width: 420px;
+        }
+        hr{
+            border-top: solid 1px gold;
+            width: 50%;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div class="container"></div>
+        <img class="got" src="img/got.png" alt="">
+        <p style="font-size: 50px; margin-top: 0px;margin-bottom: 20px;">List of Houses</p>
+        <div class="escudos">
+                <a class="link" href="" target="_blank" data-n="362"><img src="img/Stark.png"></a>
+                <a class="link" href="" target="_blank" data-n="7"><img src="img/Arryn.png"></a>
+                <a class="link" href="" target="_blank" data-n="395"><img src="img/Tuly.png"></a>
+                <a class="link" href="" target="_blank" data-n="169"><img src="img/Greyjoy.png"></a>
+                <a class="link" href="" target="_blank" data-n="229"><img src="img/Lannister.png"></a>
+                <a class="link" href="" target="_blank" data-n="17"><img src="img/baratheon.png"></a>
+                <a class="link" href="" target="_blank" data-n="398"><img src="img/Tyrell.png"></a>
+                <a class="link" href="" target="_blank" data-n="285"><img src="img/Martell.png"></a>
+                <a class="link" href="" target="_blank" data-n="378"><img src="img/Targaryen.png"></a>  
+        </div>
+        <div>
+            <button id="list">List All Houses</button><button id="post">Next 20</button>
+        </div>    
+        <div id="houses">
+            
+        </div>
+        <div class="nombres">
+
+        </div>
+
+    </div>
+    <script>
+        $('#post').hide();
+        var n = 1;
+        var a = 1;
+        var acum = 0;
+        $('#list, #post').click(function(){
+            $('#post').show();
+            $('#list').hide();
+            for(;a <= n; a++){
+                $.get("https://www.anapioficeandfire.com/api/houses?page="+a+"&pagesize=20", function(dataGot){
+                    $('#houses').html('<h1 style="font-size: 60px;">Houses:</h1>')
+                    $('.nombres').html('<p></p>');
+                    for(var i = 0; i <= 19; i++){
+                        acum = acum + 1;
+                        $('.nombres').append('<a class="link" href="" target="_blank" data-n="'+acum+'">'+acum+'- '+dataGot[i].name+'</a><hr>');
+                    }
+                    listenClick();  
+                },"json");
+            }
+            n++;
+        });
+        function listenClick(){
+            $('.link').click(function(){
+                $(this).attr("href", "houses_info.html");
+                var num = $(this).data("n");
+                localStorage.setItem("mynum",num);
+            });
+        }  
+        listenClick();
+    </script>
+</body>
+</html>
